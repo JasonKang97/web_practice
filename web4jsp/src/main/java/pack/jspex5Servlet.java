@@ -16,7 +16,8 @@ public class jspex5Servlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String data = request.getParameter("data");
 		System.out.println("data: " + data);
-		// 넘어온 자료로 여러 작업(출력이나 DB 처리 등)을 하다가 jsp 또는 servlet 파일 호출하기1: redirect - client를 통해 파일 호출.
+		// 넘어온 자료로 여러 작업(출력이나 DB 처리 등)을 하다가
+		// jsp 또는 servlet 파일 호출하기1: redirect - client를 통해 파일 호출.
 		//response.sendRedirect("jspex5jsp.jsp?mydata=" + data);	// data는 문자열만 가능하다.
 		
 		// jsp 또는 servlet 파일 호출하기2: forward - 서버에서 파일 호출.
