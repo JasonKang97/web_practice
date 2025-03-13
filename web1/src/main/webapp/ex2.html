@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지, 링크</title>
+</head>
+<body>
+이미지 읽기<br>
+<!-- alt는 이미지가 나오지 않을 경우 대신 출력되는 문자, width에서 %로 나타내면 비율로 나오며 화면 크기에 따라 달라짐 -->
+<img alt="와플과 커피가 담긴 접시 그림" title="good" src="images/1.jpg" align="left" width="20%"/>
+<br>
+<img title="다른 사이트 이미지" width="300"
+src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202502/25/seoul/20250225104309684tuva.jpg" >
+
+<hr>
+a(anchor) tag: hyper link 연습<br>
+<a href="ex1.html">ex1 문서(현재창)</a>읽기<br>	<!-- Framework 덮어쓰기 -->
+<a href="ex1.html" target="_blank">ex1 문서(새창)</a>읽기<br>	<!-- 새창 띄우기 -->
+<a href="ex1.html" target="_new">ex1 문서(새창)</a>읽기<br>	<!-- 새창 띄우기 -->
+<br/>
+<a href="https://www.kbs.co.kr">KBS 페이지 보기</a>읽기<br>
+<a href="https://www.kbs.co.kr" target="_blank">KBS 페이지 보기</a>읽기<br>
+<br/>
+<a href="my/mbc.html">my 폴더 내의 문서</a>읽기
+<br>
+<a href="my/our/sbs.html">my 폴더 내의 문서 our 폴더 내의 문서</a>읽기<br>
+<br/>
+<a href="ex1.html">
+	<img alt="" src="images/3.jpg" width="150" height=100>
+</a>
+<br/>
+<a href="test.txt">텍스트 문서</a> <!-- 브라우저에서 열 수 없는 문서의 경우 다운로드한다. -->
+<br/>
+<a href="test2.xlx">엑셀 문서</a>
+<br/>
+<a href="mailto:shsh2048@naver.com">친구에게 메일전송</a>
+<hr>
+frame 추가(하나의 frame은 1개의 문서(html 등)가 표현되는 공간)
+<br>
+<a href="https://www.korea.com" target="tiger">코리아 페이지</a>&nbsp;&nbsp;
+<a href="https://www.daum.net" target="tiger">다음 페이지</a>
+<iframe src="ex1.html" width="100%" height="500" name="tiger"></iframe>
+<br>
+
+
+</body>
+</html>

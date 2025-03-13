@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Layout Test</title>
+<style type="text/css">
+body{
+	width: 95%;	/* 전체 페이지 너비를 화면 너비의 95%로 설정*/
+	margin: 0 auto; /* 페이지를 화면 중앙에 배치*/
+}
+h2#title{
+	text-align: center; /* 텍스트 중앙으로 설정*/
+	border-bottom: 2px dashed black;
+	padding-bottom: 10px;
+
+}
+
+ul{
+	list-style: none; /* 목록 스타일 제거*/
+	padding: 0; /* 안쪽 여백 제거*/
+	margin: 0; /* 바깥쪽 여백 제거*/
+}
+
+li a{
+	display: block; /* link를 블록 요소로 설정*/
+}
+
+.head{
+	border: 1px solid red;
+	width: 100%;
+	overflow: auto; /* 콘텐츠의 내용이 넘칠 경우 자동으로 스크롤 바를 추가*/
+	padding: 10px;
+	box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 설정*/
+}
+
+.head ul{
+	display: flex; /* flex box 레이아웃 설정*/
+	justify-content: center; /* 항목을 중앙에 배치*/
+	gap: 10px; /* 항목 사이에 간격을 추가*/
+	
+}
+
+nav{
+	float: left;	/*왼쪽으로 정렬하여 플로팅*/
+	width: 20%;
+}
+
+#contents{
+	float: left;
+	width: 50%
+}
+
+#ad{
+	float: left;
+	width: 30%;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+footer{
+	clear: both; /* floting 해제 */
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+
+</style>
+</head>
+<body>
+<h2 id="title">CSS로 화면 구조 설정 연습</h2>
+<header>
+	<h3>여기는 머리글</h3>
+	<div class="head">
+		<ul>
+			<li class="go_site"><a href="https://www.naver.com">네이버</a></li>
+			<li class="go_site"><a href="https://www.korea.com">코리아</a></li>
+			<li class="go_site"><a href="https://www.daum.net">다음</a></li>	
+		</ul>	
+	</div>
+</header>
+<nav>
+	<h3>항목 선택</h3>
+	<ul>
+		<li>메인</li>
+		<li>자동차</li><li>반도체</li><li>배터리</li><li>조선</li>	
+	</ul>
+</nav>
+<div id="contents">
+	<h3>핫 이슈(qhsans)</h3>
+	<p>
+제가 데뷔 첫해 17패를 했기 때문에 100승 투수가 될 수 있었습니다. 제가 통산 110패를 했기 때문에 109승도 가능했던 거죠.”
+장호연. 지난주 [베팬알기]에서 소개했듯이 베어스 구단의 통산 최다승(109승) 투수다. 하지만 이와 함께 베어스 구단의 통산 최다패(110패) 투수이기도 하다. 그는 110번의 패전 기록이 현역 시절 승리의 밑거름이 됐다고 돌아보고 있다.
+
+흔히 ‘역사는 승자의 기록’이라고 한다. 하지만 어찌 스포츠에 승자만 있겠는가. 승자의 환호 뒤엔 패자의 눈물이 있고, 승자의 역사 이면엔 패자의 역사도 함께 숨쉬고 있다.
+
+[베팬알기-베어스 팬이라면 알아야 할 기록 이야기] 이번 편에서는 패전투수의 역사와 베어스 및 KBO 각 팀 프랜차이즈 최다패 투수에 대해 살펴보기로 한다.
+
+	</p>
+</div>
+<div id="ad">
+	<h3>광고글</h3>
+	<ol>
+		<li>현대</li><li>삼성</li><li>엘지</li>
+	</ol>
+</div>
+<footer>
+	<b>나는 바닥글</b> 공지 사항을 적음
+</footer>
+</body>
+</html>
+
+
+

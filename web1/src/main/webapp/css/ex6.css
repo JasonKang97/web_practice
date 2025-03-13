@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/*주석 방식*/
+#i2{
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	
+}
+
+table{
+	width: 80%; margin-bottom: 10px;
+}
+
+table#firstTable tr td{	/*한칸 띄울때마다 해당 경로의 자손이라는 의미이다. 여기서는 tr, tr은 table의 자손이라는 의미다. 바로 및인 자식은 >로 나타낼 수 있다.*/
+	border: 1px solid blue;
+	border-top: 2px dotted #ff0;
+	border-bottom: 2px dashed rgb(0,0,0);
+}
+
+b{
+	font-size: 8px;
+}
+
+div b{
+	font-size: 16px;
+}
+
+div > b{
+	font-size: 16px; color: red;
+}
+
+div > span > b{
+	font-size: 32px;
+}
+
+div b#hi{
+	font-size: 40px;
+}
+
+div b.hello{
+	font-size: 40px; color: yellow;
+}
+
+i, strong{
+	color: rgb(0%,0%,90%);
+}
+
+div#sajin{
+	height: 150px;
+	background-image: url("../images/1.jpg");
+}
+
+img{
+	border: 5px dotted red;
+}
+
+/* 동적 선택자 */
+input:focus{ /*문자를 입력 상태일때*/
+	background-color: #aabbcc;
+}
+
+a:link{/*링크 상태일 때*/
+	text-decoration: none;
+}
+
+a:active { /*클릭 중*/
+	color: black; font-family: 돋움;	
+}
+
+a:hover{ /*over와 out*/
+	color: silver; font-size: 10pt;
+}
+
+
+
+
+
+
