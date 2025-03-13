@@ -1,4 +1,4 @@
-<%--page 지시어: 현재 문서의 속성이나 정보 등을 선얺 또는 지시하는 역할 --%>
+<%--page 지시어: 현재 문서의 속성이나 정보 등을 선언 또는 지시하는 역할 --%>
 <%--사용 가능한 언어가 java 하나뿐이라 language="java"는 생략 가능 --%>
 <%--session, buffer, autoFlush, isThreadSafe, info 또한 생략 가능 --%>
 <%@page import="java.time.ZoneId"%>
