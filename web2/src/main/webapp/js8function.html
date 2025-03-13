@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+</head>
+<body>
+함수(function)란?<br>
+특별한 목적의 작업을 수행하도록 설계된 독립적인 실행 영역(블록)을 말한다.<br>
+<pre>
+함수 수정 요소
+ 1) 함수 이름
+ 2) 매개변수(parameter)
+ 3) 본문({}로 둘러 싸인 자바스크립트 실행문들)
+
+function 함수명(매개변수 a, ...){
+	실행문...
+	return 반환 값;
+}
+
+함수는 내장함수와 사용자 정의 함수로 나뉜다.
+</pre>
+<hr>
+<script type="text/javascript">
+document.write("내장함수 중 문자 관련 예시");
+let str = "Java script Language";
+document.write(`<br>str.charAt(0): ${str.charAt(0)}`);
+document.write(`<br>str.indextOf('v'): ${str.indexOf('v')}`);
+document.write(`<br>str.indextOf('K'): ${str.indexOf('K')}`);
+document.write(`<br>str.substring(1,3): ${str.substring(1,3)}`);	// 1 이상 3 미만 번쨰 문자를 출력
+document.write(`<br>str.slice(1,5): ${str.slice(1,5)}`);	// 시작인덱스 이상, 끝인덱스 미만
+
+document.write("<br>내장함수 중 스타일 관련 예시");
+document.write(`<br>str.bold(): ${str.bold()}`);
+document.write(`<br>str.big().strike().fontsize(24): ${str.big().strike().fontsize(24)}`);	// strike()는 취소선
+
+document.write("<br>");
+document.write("내장함수 중 수학 관련 예시");
+document.write(`<br>Math.abs(-7): ${Math.abs(-7)}`);
+document.write(`<br>Math.round(3.6): ${Math.round(3.6)}`);
+document.write(`<br>Math.random(): ${Math.random()}`);
+
+document.write("<br>");
+document.write("내장함수 중 날짜 관련 예시");
+let d = new Date();
+document.write(`<br>Date(): ${Date()}`);
+document.write(`<br>d: ${d}`);
+document.write(`<br>${d.getFullYear()}년 ${d.getMonth()+1}월 ${d.getDate()}일 ${d.getHours()}시`);	// getMonth는 0부터 시작하므로 +1 필요
+
+document.write("<br>");
+document.write("내장함수 중 기타 관련 예시");
+document.write(`<br>parseInt(): ${parseInt("3.7")+5}`);	// 소수자리 버림
+document.write(`<br>parseFloat(): ${parseFloat("3.7")+5}`);	// 문자열을 실수화
+
+// 별도 창 열기: open('파일명', '출력형태', '속성')
+open('js1.html', '_blank', 'width=300, height=200, left=100, top=20, resizable=yes');
+
+
+
+</script>
+</body>
+</html>

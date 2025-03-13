@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수와 연산자</title>
+</head>
+<body>
+<h2>JS에서 변수 사용법</h2>
+<script type="text/javascript">
+// 한 줄 주석	/**/ 여러줄 주석
+let aa;	// 변수 선언: type을 적지 않는다. 대문자로 시작 가능, 대소분자 구분.
+aa=10;	// 저장되는 자료에 의해 type이 결정된다.
+aa=5.6;
+aa="good";
+aa=true;
+aa=null;
+aa=undefined;
+
+
+document.write(typeof aa, "<br>");	// 원시 타입: number, string, boolean, undefined, ..., 참조 타입: object, Array, Funcion...
+document.write(aa);
+
+let bb=5;
+bb=6;
+const cc=5;	// 수정 불가(java의 fianal과 같다.). 한 번 저장 후 참조만 가능
+//cc=6;	// Uncaught TypeError: Assignment to constant variable.
+
+document.write("<br>지역과 전역(블록 내에서 선언한 변수는 해당 지역에서만 유효)");	// 변수 선언시 let을 쓰지않고 선언할 경우 지역의 구분이 없어짐.
+let dd="a"; var vv="a1";	// var 변수명으로 선언하면 모두 전역 변수가 된다. Hoisting 처리됨
+// Hoisting: var로 선언된 변수나 funtion은 실행 시 최상단으로 끌어 올려 실행된다. 간단하게 말하면 전역 멤버처럼 사용된다.
+// 참고로 js 일종으로 Typescript는 let su:number = 5; 이런 식으로 변수 선언 시 타입을 적어준다.
+{
+	let dd1="b";
+	{
+		let dd2="c";
+		{
+			let dd3="d"; var vv1="a2";
+			document.write("<br>",dd, dd1, dd2, dd3);
+			document.write("<br>",vv, vv1);
+		}
+		//document.write("<br>",dd, dd1, dd2, dd3);	// Uncaught ReferenceError: dd3 is not defined
+		document.write("<br>",vv, vv1);
+
+	}
+}
+
+// 백틱(`)을 사용해 템플릿 문자열 처리. 변수를 부를 때는 `${}`안에 입력하여 변수 출력
+let str1 = "hi";
+let str2 = "james";
+document.write("<br>아침인사 하기 ", str1, " ", str2, " 성공",)
+document.write(`<br>아침인사 하기 ${str1} ${str2} 성공`);
+
+
+</script>
+</body>
+</html>

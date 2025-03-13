@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = () => {
+	document.getElementById("btnOk").onclick = function(){
+		// 입력자료 오류 검사 생략
+		frm.submit();
+	}
+}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td><img src="../images/jepum1.jpg" width="80%"></td>
+		<td>
+		<pre>
+			유한락스 멀티액션 욕실청소용 세정제, 510ml, 3개
+			159,343개 상품평
+			33% 14,900원 
+			10,000원 판매가
+			무료배송 (로켓배송 상품 19,800원 이상 구매 시)  다른 판매자 보기(8)
+			내일(목) 3/13 도착 보장 (11시간 46분  내 주문 시 / 서울⋅경기 기준) 
+		</pre>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<form action="../CartServlet" name="frm" method="post">	<!-- servlet의 위치는 호출 시 항상 현재 context의 root로 지정해야한다. -->
+				<input type="hidden" name="name" value="유한락스 멀티액션 욕실청소용 세정제">
+				<input type="hidden" name="price" value="10000">
+				
+				<input type="button" id="btnOk" value="장바구니에 담기">
+				<input type="button" value="홈페이지로 이동" onclick="history.back()">
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload= () => {
+	document.querySelector("#all").onclick = showFunc1;
+	document.querySelector("#man").onclick = showFunc2;
+	document.querySelector("#woman").onclick = showFunc3;
+	document.querySelector("#all2").onclick = showFunc11;
+	document.querySelector("#man2").onclick = showFunc22;
+	document.querySelector("#woman2").onclick = showFunc33;
+}
+
+function showFunc1(){
+	xhr = new XMLHttpRequest();
+	xhr.open("GET", "./js35all.jsp", true);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState === 4 && xhr.status === 200){
+			processFunc1();
+		}
+	}
+	xhr.send();
+}
+
+function processFunc1(){
+	let datas = xhr.responseText;
+	let parseData = JSON.parse(datas)
+	let str = "<tr><th>사번</th><th>이름</th><th>직급</th><th>입사년</th></tr>";
+	for(let i=0;i<parseData.jikwon.length;i++){
+		str +=
+		"<tr>" + 
+		"<td>" + parseData.jikwon[i].jikwonno + "</td>" + 
+		"<td>" + parseData.jikwon[i].jikwonname + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonjik + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonibsail + "</td>" + 
+		"</tr>";
+	}
+	document.querySelector("#table").innerHTML = str;
+}
+
+function showFunc11(){
+	fetch("js35all.jsp")
+	.then(response => {
+		if(!response.ok){
+			throw new Error(`HTTP error: ${response.status}`)
+		}
+		return response.json()
+	})
+	.then(parseData => {
+		processFunc11(parseData)
+	})
+	.catch(error => console.log("fetch err: " + error))
+	
+}
+
+function processFunc11(parseData){
+	let str = "<tr><th>사번</th><th>이름</th><th>직급</th><th>입사년</th></tr>";
+	for(let i=0;i<parseData.jikwon.length;i++){
+		str += 	"<tr>" + 
+		"<td>" + parseData.jikwon[i].jikwonno + "</td>" + 
+		"<td>" + parseData.jikwon[i].jikwonname + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonjik + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonibsail + "</td>" + 
+		"</tr>";
+	}
+	document.querySelector("#table2").innerHTML= str;
+}
+
+
+function showFunc2(){
+	xhr = new XMLHttpRequest();
+	xhr.open("GET", "./js35man.jsp", true);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState === 4 && xhr.status === 200){
+			processFunc2();
+		}
+	}
+	xhr.send();
+}
+
+function processFunc2(){
+	let datas = xhr.responseText;
+	let parseData = JSON.parse(datas)
+	let str = "<tr><th>사번</th><th>이름</th><th>직급</th><th>입사년</th></tr>";
+	for(let i=0;i<parseData.jikwon.length;i++){
+		str +=
+		"<tr>" + 
+		"<td>" + parseData.jikwon[i].jikwonno + "</td>" + 
+		"<td>" + parseData.jikwon[i].jikwonname + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonjik + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonibsail + "</td>" + 
+		"</tr>";
+	}
+	document.querySelector("#table").innerHTML = str;
+}
+
+function showFunc22(){
+	fetch("js35man.jsp")
+	.then(response => {
+		if(!response.ok){
+			throw new Error(`HTTP error: ${response.status}`)
+		}
+		return response.json()
+	})
+	.then(parseData => {
+		processFunc22(parseData)
+	})
+	.catch(error => console.log("fetch err: " + error))
+	
+}
+
+function processFunc22(parseData){
+	let str = "<tr><th>사번</th><th>이름</th><th>직급</th><th>입사년</th></tr>";
+	for(let i=0;i<parseData.jikwon.length;i++){
+		str += 	"<tr>" + 
+		"<td>" + parseData.jikwon[i].jikwonno + "</td>" + 
+		"<td>" + parseData.jikwon[i].jikwonname + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonjik + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonibsail + "</td>" + 
+		"</tr>";
+	}
+	document.querySelector("#table2").innerHTML= str;
+}
+
+function showFunc3(){
+	xhr = new XMLHttpRequest();
+	xhr.open("GET", "./js35woman.jsp", true);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState === 4 && xhr.status === 200){
+			processFunc3();
+		}
+	}
+	xhr.send();
+}
+
+function processFunc3(){
+	let datas = xhr.responseText;
+	let parseData = JSON.parse(datas)
+	let str = "<tr><th>사번</th><th>이름</th><th>직급</th><th>입사년</th></tr>";
+	for(let i=0;i<parseData.jikwon.length;i++){
+		str +=
+		"<tr>" + 
+		"<td>" + parseData.jikwon[i].jikwonno + "</td>" + 
+		"<td>" + parseData.jikwon[i].jikwonname + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonjik + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonibsail + "</td>" + 
+		"</tr>";
+	}
+	document.querySelector("#table").innerHTML = str;
+}
+
+function showFunc33(){
+	fetch("js35woman.jsp")
+	.then(response => {
+		if(!response.ok){
+			throw new Error(`HTTP error: ${response.status}`)
+		}
+		return response.json()
+	})
+	.then(parseData => {
+		processFunc33(parseData)
+	})
+	.catch(error => console.log("fetch err: " + error))
+	
+}
+
+function processFunc33(parseData){
+	let str = "<tr><th>사번</th><th>이름</th><th>직급</th><th>입사년</th></tr>";
+	for(let i=0;i<parseData.jikwon.length;i++){
+		str += 	"<tr>" + 
+		"<td>" + parseData.jikwon[i].jikwonno + "</td>" + 
+		"<td>" + parseData.jikwon[i].jikwonname + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonjik + "</td>" +
+		"<td>" + parseData.jikwon[i].jikwonibsail + "</td>" + 
+		"</tr>";
+	}
+	document.querySelector("#table2").innerHTML= str;
+}
+
+
+</script>
+</head>
+<body>
+<h2>GET 방식</h2>
+<form name="frm">
+<h3>직원 정보</h3>
+<input type="radio" name="gender" id="all">전체
+<input type="radio" name="gender" id="man">남
+<input type="radio" name="gender" id="woman">여
+<table border="1" id="table">
+</table>
+<hr>
+<input type="radio" name="직원 정보" id="all2">전체
+<input type="radio" name="직원 정보" id="man2">남
+<input type="radio" name="직원 정보" id="woman2">여
+<table border="1" id="table2">
+</table>
+</form>
+</body>
+</html>
