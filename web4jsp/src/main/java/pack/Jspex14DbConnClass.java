@@ -50,8 +50,5 @@ public class Jspex14DbConnClass {
 			}
 		}
 		return list;
-	}
-	
-	
-	
+	}	
 }

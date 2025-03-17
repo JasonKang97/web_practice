@@ -1,7 +1,23 @@
 package pack;
 
 public class Jspex14JikwonDto {
-	private String jikwonno, jikwonname, jikwonjik, jikwongen;
+	private String jikwonno, jikwonname, jikwonjik, jikwongen, minPay, maxPay;
+
+	public String getMinPay() {
+		return minPay;
+	}
+
+	public void setMinPay(String minPay) {
+		this.minPay = minPay;
+	}
+
+	public String getMaxPay() {
+		return maxPay;
+	}
+
+	public void setMaxPay(String maxPay) {
+		this.maxPay = maxPay;
+	}
 
 	public String getJikwonno() {
 		return jikwonno;
