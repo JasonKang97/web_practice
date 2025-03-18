@@ -3,14 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+window.onload = () => {
+	document.querySelector("#btnBack").onclick = () => {
+		location.href = "jspex17ex.jsp"
+	}
+}
+</script>
 </head>
 <body>
 <form action="jspex17write.jsp" method="post" id="frm">
 작성자: <input type="text" name="writer" id="writer"><br>
 제목: <input type="text" name="title" id="title"><br>
-내용: <input type="text" name="contents" id="contents"><br>
+내용: <textarea rows="2" cols="100" name="contents" id="contents"></textarea><br>
 <input type="submit" value="작성하기">
 <input type="reset" value="초기화">
+<input type="button" value="돌아가기" id="btnBack">
 </form>
 </body>
 </html>
