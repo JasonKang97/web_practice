@@ -18,7 +18,12 @@ function funcUpdate(){
 }
 
 function funcDelete(){
-	alert("b");
+	let code = prompt("삭제할 코드 입력");
+	if(code !=="" && code !== null){
+		if(confirm("정말 삭제하시겠습니까?")){
+			location.href="jspex16del.jsp?code=" + code;			
+		}
+	}
 }
 </script>
 </head>

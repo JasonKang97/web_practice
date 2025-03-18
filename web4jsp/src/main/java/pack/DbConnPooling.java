@@ -125,4 +125,41 @@ public class DbConnPooling {
 		}
 		return dto;
 	}
+	
+	public boolean updateData(SangpumFormBean bean) {
+		boolean b = false;
+		
+		String sql = "update sangdata set sang=?, su=?, dan=? where code=?";
+		
+		try(
+			Connection conn = ds.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+		) {
+			pstmt.setString(1, bean.getSang());
+			pstmt.setString(2, bean.getSu());
+			pstmt.setString(3, bean.getDan());
+			pstmt.setString(4, bean.getCode());
+			if(pstmt.executeUpdate()>0) b = true;
+		} catch (Exception e) {
+			System.out.println("updateData err: " + e.getMessage());
+		}
+		return b;
+	}
+	
+	public boolean deleteData(String code) {
+		boolean b = false;
+		String sql = "delete from sangdata where code=?";
+		try (
+			Connection conn = ds.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
+		){
+			pstmt.setString(1, code);
+			if(pstmt.executeUpdate()>0) b = true;
+		} catch (Exception e) {
+			System.out.println("deleteData err: " + e);
+		}
+		return b;
+	}
+	
+	
 }
