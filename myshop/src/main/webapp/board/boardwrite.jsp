@@ -57,10 +57,9 @@ function check(){
 		<tr>
 			<td colspan="2" align="center" height="30">
 			    <input type="button"
-				 value="메  인" onClick="location.href='../index.jsp'">&nbsp;
+				 value="메  인" onClick="location.href='../index.html'">&nbsp;
 				<input type="button" value="작  성" onClick="check()">&nbsp;
-				<input type="button" value="목  록"
-				  onClick="location.href='boardlist.jsp'"></td>
+				<input type="button" value="목  록" onClick="location.href='boardList.jsp'"></td>
 		</tr>
 	</table>
 </form>
