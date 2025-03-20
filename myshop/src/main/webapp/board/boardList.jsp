@@ -35,7 +35,7 @@ window.onload = () => {
 			[<a href="../index.html">메인으로</a>]&nbsp;
 			[<a href="boardList.jsp?page=1">최근목록</a>]&nbsp;
 			[<a href="boardwrite.jsp">새글작성</a>]&nbsp;
-			[<a href="#" onclick="window.open('admin.jsp','width=300,height=200,top=200,left=300')">관리자용</a>]&nbsp;
+			[<a href="#" onclick="window.open('admin.jsp','','width=500,height=200,top=200,left=300')">관리자용</a>]&nbsp;
 		<br>
 		<br>
 		<table style="width:100%">
@@ -61,10 +61,17 @@ window.onload = () => {
 			ArrayList<BoardDto> list = boardManager.getDataAll(bpage, searchType, searchWord);	// 검색이 있는 경우
 			for(int i = 0;i<list.size();i++){
 				dto = list.get(i);
+				
+				// 댓글 들여쓰기 준비
+				int nst = dto.getNested();
+				String tab = "";
+				for(int k=0;k<nst;k++){
+					tab += "&nbsp;&nbsp;";
+				}
 			%>
 			<tr>
 				<td><%=dto.getNum()%></td>
-				<td><%=dto.getTitle()%></td>
+				<td><%=tab %><a href="boardcontent.jsp?num=<%=dto.getNum()%>&page=<%=bpage%>"><%=dto.getTitle()%></a></td>
 				<td><%=dto.getName()%></td>
 				<td><%=dto.getBdate()%></td>
 				<td><%=dto.getReadcnt()%></td>

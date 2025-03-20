@@ -15,5 +15,4 @@ bean.setGnum(newNum);	// 원글인 경우
 boardManager.saveData(bean);
 
 response.sendRedirect("boardList.jsp?page=1");	// 추가 후 목록보기
-
 %>
