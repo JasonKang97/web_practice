@@ -55,4 +55,27 @@ public class MemberManager {
 		}
 		return list;
 	}
+	
+	public boolean idCheckProcess(String id) {
+		boolean b = false;
+		try {
+			conn = ds.getConnection();
+			String sql="select id from member where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			b = rs.next();	
+		} catch (Exception e) {
+			System.out.println("idCheckProcess err: " + e);
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return b;
+	}
 }

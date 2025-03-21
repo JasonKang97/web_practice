@@ -7,7 +7,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 
-String heck = request.getParameter("check");	// y or n
+String check = request.getParameter("check");	// y or n
 String dongName = request.getParameter("dongName");
 
 ArrayList<ZipcodeDto> zlist = memberManager.zipcodeRead(dongName);
@@ -28,27 +28,75 @@ window.onload = () => {
 }
 
 function dongCheck(){
-	alert("a");
+	if(zipForm.dongName.value === ""){
+		alert("검색어를 입력해주세요.");
+		zipForm.dongName.focus();
+		return;
+	}
+	
+	zipForm.submit();
 }
+
+function sendDataFunc(code, a1, a2, a3, a4){
+	opener.document.regForm.zipcode.value = code;	// 현재 파일을 열어주는 파일이 opener다.
+	const addr = a1 + " " + a2 + " " + a3 + " " + a4
+	opener.document.regForm.address.value = addr;
+	window.close();
+}
+
+
 </script>
 </head>
 <body>
 <strong>* 우편번호 찾기 *</strong>
-<form action="zipcheck.jsp" name="zipForm" method="get">
+<form action="zipcheck.jsp" name="zipForm" method="post">
 <table>
 	<tr>
 		<td>
-			폼 이름 입력: <input type="text" name="dongName" size="10">
+			동 이름 입력: <input type="text" name="dongName" size="10">
 			<input type="button" value="검색" id="btnZipFind">
 			<input type="button" value="닫기" id="btnZipClose">
 			<input type="hidden" name="check" value="n">
 		</td>
 	</tr>
-
-
-
-
 </table>
 </form>
+<%
+if(check.equals("n")){
+	if(zlist.isEmpty()){
+%>
+	<b>검색 결과가 없습니다.</b>
+<%
+	}else{
+%>
+	<table>
+		<tr>
+			<td style="text-align:center">검색 자료를 클릭하면 주소가 입력됩니다.</td>
+		</tr>
+		<tr>
+			<td>
+			<%
+			for(int i=0;i<zlist.size();i++){
+				ZipcodeDto zipcodeDto = (ZipcodeDto)zlist.get(i);
+				String zipcode = zipcodeDto.getZipcode();
+				String area1 = zipcodeDto.getArea1();
+				String area2 = zipcodeDto.getArea2();
+				String area3 = zipcodeDto.getArea3();
+				String area4 = zipcodeDto.getArea4();
+				if(area4==null) area4="";
+				//out.println(zipcode + " " + area1 + " " + area2 + " " + area3 + "<br>");
+			%>
+				<a href="javascript:sendDataFunc('<%=zipcode%>','<%=area1%>','<%=area2%>','<%=area3%>','<%=area4%>')"><%=zipcode%> <%=area1%> <%=area2%> <%=area3%> <%=area4%></a><br>
+			<%
+			}
+			%>
+			</td>
+		</tr>
+	</table>
+<%
+	}
+}
+
+%>
 </body>
 </html>
