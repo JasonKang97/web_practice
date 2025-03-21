@@ -43,7 +43,6 @@ function dongCheck(){
 			<input type="button" value="닫기" id="btnZipClose">
 			<input type="hidden" name="check" value="n">
 		</td>
-	
 	</tr>
 
 
