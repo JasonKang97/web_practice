@@ -24,3 +24,23 @@ function inputCheck(){
 	
 	regForm.submit();
 }
+
+// 회원 로그인 관련
+function funcLogin(){
+	if(loginForm.id.value===""){
+		alert("아이디를 입력해주세요");
+		loginForm.id.focus();
+	}else if(loginForm.passwd.value===""){
+		alert("비밀번호를 입력해주세요");
+		loginForm.passwd.focus();
+	}else{
+	loginForm.action = "loginproc.jsp";
+	loginForm.method = "post";
+	loginForm.submit();
+	}
+}
+
+function funcNewMember(){
+	location.href = "register.jsp";
+	
+}

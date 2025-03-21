@@ -78,4 +78,58 @@ public class MemberManager {
 		}
 		return b;
 	}
+	
+	public boolean memberInsert(MemberBean mbean) {
+		boolean b = false;
+		try {
+			conn = ds.getConnection();
+			String sql="insert into member values(?,?,?,?,?,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mbean.getId());
+			pstmt.setString(2, mbean.getPasswd());
+			pstmt.setString(3, mbean.getName());
+			pstmt.setString(4, mbean.getEmail());
+			pstmt.setString(5, mbean.getPhone());
+			pstmt.setString(6, mbean.getZipcode());
+			pstmt.setString(7, mbean.getAddress());
+			pstmt.setString(8, mbean.getJob());
+			if(pstmt.executeUpdate()>0) b = true;	
+		} catch (Exception e) {
+			System.out.println("memberInsert err: " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return b;
+	}
+
+	public boolean loginCheck(String id, String passwd) {
+		boolean b = false;
+		try {
+			conn = ds.getConnection();
+			String sql="select * from member where id=? and passwd=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, passwd);
+			rs = pstmt.executeQuery();
+			b = rs.next();	
+		} catch (Exception e) {
+			System.out.println("loginCheck err: " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		
+		return b;
+	}
 }
