@@ -41,7 +41,7 @@ function dongCheck(){
 			폼 이름 입력: <input type="text" name="dongName" size="10">
 			<input type="button" value="검색" id="btnZipFind">
 			<input type="button" value="닫기" id="btnZipClose">
-			<input type="hidden" name="check" value="n">
+			<input type="hidden" name="check" value="n">a
 		</td>
 	
 	</tr>
