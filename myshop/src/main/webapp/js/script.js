@@ -42,5 +42,37 @@ function funcLogin(){
 
 function funcNewMember(){
 	location.href = "register.jsp";
-	
 }
+
+// 쇼핑몰 고객이 로그인 후 자신의 정보 수정
+function memberUpdate(){
+	document.updateForm.submit();
+}
+
+function memberUpdateCancle(){
+	location.href="../guest/guest_index.jsp";
+}
+
+function memberDelete(){
+	alert("생략");
+}
+
+// 관리자 관련 
+function funcAdminLogin(){
+	if(adminLoginForm.admin_id.value===""){
+		alert("관리자 아이디를 입력하세요.");
+		adminLoginForm.admin_id.focus();
+		return;
+	}
+	else if(adminLoginForm.admin_passwd.value===""){
+		alert("관리자 비밀번호를 입력하세요.");
+		adminLoginForm.admin_passwd.focus();
+		return;
+	}
+	adminLoginForm.submit();
+}
+
+function funcHome(){
+	location.href="../guest/guest_index.jsp";
+}
+

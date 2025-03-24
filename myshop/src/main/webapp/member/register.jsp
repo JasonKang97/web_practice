@@ -14,7 +14,7 @@
 		document.getElementById("btnId").onclick = idCheck;
 		document.getElementById("btnSubmit").onclick = inputCheck;
 		document.getElementById("btnBack").onclick = function(){
-			location.href="memberlist.jsp";
+			location.href="../guest/guest_index.jsp";
 		}
 	}
 </script>

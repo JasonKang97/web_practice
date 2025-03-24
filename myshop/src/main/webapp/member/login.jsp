@@ -17,7 +17,7 @@ window.onload = () => {
 	document.querySelector("#btnLogin").addEventListener("click", funcLogin);
 	document.querySelector("#btnNewMember").addEventListener("click", funcNewMember);
 	document.getElementById("btnBack").onclick = () => {
-		location.href="memberlist.jsp";
+		location.href="../guest/guest_index.jsp";
 	}
 }
 </script>
