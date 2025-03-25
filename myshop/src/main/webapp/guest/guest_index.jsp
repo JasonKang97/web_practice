@@ -34,6 +34,7 @@ if(memid!=null){
 		<td style="font-size: 20px; background-image:url(../images/main.png); background-size: 100%">
 			<br><br><br><br>고객님 어서오세요.
 			<br><br><br>로그인 후 이용바랍니다.<br><br><br><br><br><br><br><br><br><br><br><br>
+			
 		</td>
 	</tr>
 <%
