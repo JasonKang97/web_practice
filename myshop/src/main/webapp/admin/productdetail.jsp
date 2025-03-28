@@ -49,11 +49,27 @@ ProductDto productDto = productManager.getProduct(no);
 			</table>
 		</td>
 		<td style="width:30%; vertical-align: top;" >
+			<b>* 상품 설명 *</b>
 			<%=productDto.getDetail() %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<a href="javascript:productUpdate('<%=productDto.getNo() %>')">수정하기</a>
+			<a href="javascript:productDelete('<%=productDto.getNo() %>')">삭제하기</a>
 		</td>
 	</tr>
 </table>
 
 <%@include file="admin_bottom.jsp" %>
+
+<!-- productproc로 바로 가는게 아니라 수정 화면을 띄워 정보 수정 후 정보 전달 -->
+<form action="productupdate.jsp" name="updateFrm" method="post">	
+	<input type="hidden" name="no">
+</form>
+
+<form action="productdelete.jsp" name="deleteFrm" method="post">
+	<input type="hidden" name="no">
+</form>
 </body>
 </html>
