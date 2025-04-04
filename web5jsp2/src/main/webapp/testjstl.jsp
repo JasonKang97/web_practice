@@ -1,5 +1,5 @@
-<%@page import="pack.Student"%>
-<%@page import="pack.Person"%>
+<%@page import="pack.controller.Student"%>
+<%@page import="pack.controller.Person"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

@@ -5,7 +5,7 @@
 String code = request.getParameter("code");
 %>
 
-<jsp:useBean id="dbcp" class="pack.Jspex17DBCP"/>
+<jsp:useBean id="dbcp" class="pack.controller.Jspex17DBCP"/>
 
 
 <%

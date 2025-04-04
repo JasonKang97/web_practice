@@ -1,4 +1,4 @@
-<%@page import="pack.Jspex9Gugu"%>
+<%@page import="pack.controller.Jspex9Gugu"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ for(int a=0;a<result.length;a++){
 <hr>
 <b>* beans를 사용 *</b>
 <br>
-<jsp:useBean id="gugu2" class="pack.Jspex9Gugu"/>	<!-- 해당 class에 대한 객체를 singleton으로 생성 -->
+<jsp:useBean id="gugu2" class="pack.controller.Jspex9Gugu"/>	<!-- 해당 class에 대한 객체를 singleton으로 생성 -->
 <%
 int result2[] = gugu2.computeGugu(dan);
 for(int a=0;a<result2.length;a++){

@@ -3,9 +3,9 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
-<jsp:useBean id="dto" class="pack.Jspex17Dto"/>
+<jsp:useBean id="dto" class="pack.controller.Jspex17Dto"/>
 <jsp:setProperty property="*" name="dto"/>
-<jsp:useBean id="dbcp" class="pack.Jspex17DBCP"/>
+<jsp:useBean id="dbcp" class="pack.controller.Jspex17DBCP"/>
 
 <%
 boolean b = dbcp.insertData(dto);

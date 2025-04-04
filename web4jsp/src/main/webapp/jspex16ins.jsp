@@ -5,9 +5,9 @@
 request.setCharacterEncoding("utf-8");
 %>
 
-<jsp:useBean id="formBean" class="pack.SangpumFormBean"/>
+<jsp:useBean id="formBean" class="pack.controller.SangpumFormBean"/>
 <jsp:setProperty property="*" name="formBean"/>
-<jsp:useBean id="dbConnPooling" class="pack.DbConnPooling"/>
+<jsp:useBean id="dbConnPooling" class="pack.controller.DbConnPooling"/>
 
 <%
 boolean b = dbConnPooling.insertData(formBean);

@@ -1,12 +1,12 @@
-<%@page import="pack.Jspex17Dto"%>
-<%@page import="pack.SangpumDto"%>
+<%@page import="pack.controller.Jspex17Dto"%>
+<%@page import="pack.controller.SangpumDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 String code = request.getParameter("code");
 %>
 
-<jsp:useBean id="dbcp" class="pack.Jspex17DBCP"/>
+<jsp:useBean id="dbcp" class="pack.controller.Jspex17DBCP"/>
 <!DOCTYPE html>
 <html>
 <head>

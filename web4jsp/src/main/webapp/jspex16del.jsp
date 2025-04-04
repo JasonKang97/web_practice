@@ -5,7 +5,7 @@
 String code = request.getParameter("code");
 %>
 
-<jsp:useBean id="dbConnPooling" class="pack.DbConnPooling"/>
+<jsp:useBean id="dbConnPooling" class="pack.controller.DbConnPooling"/>
 
 
 <%

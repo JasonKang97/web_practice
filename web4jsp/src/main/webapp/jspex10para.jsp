@@ -12,7 +12,7 @@ String message = request.getParameter("message");
 </head>
 <body>
 <h3>* 클래스 멤버 필드에 값 설정하고 참조하기 *</h3>
-<jsp:useBean id="myClass" class="pack.Jspex10Para" scope="page"/>
+<jsp:useBean id="myClass" class="pack.controller.Jspex10Para" scope="page"/>
 <!-- 
 page: 현재 jsp 페이지에서만 유효
 request: 다른 jsp 페이지에 전달 가능
@@ -26,7 +26,7 @@ out.println(myClass.getMessage());
 %>
 <hr>
 Beans의 속성 tag 사용:
-<jsp:useBean id="myClass2" class="pack.Jspex10Para" scope="page"/>
+<jsp:useBean id="myClass2" class="pack.controller.Jspex10Para" scope="page"/>
 <jsp:setProperty property="message" name="myClass2"/>
 <!-- 클라이언트의 '?message=good'이 Jspex10Para의 setMessage를 통해 message 필드에 값이 저장. property는 setter와 이름을 맞추어주어야함.-->
 <jsp:getProperty property="message" name="myClass2"/>

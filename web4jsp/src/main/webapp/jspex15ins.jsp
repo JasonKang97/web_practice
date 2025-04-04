@@ -6,8 +6,8 @@ request.setCharacterEncoding("utf-8");
 //String sang = request.getParameter("sang");
 // 폼빈 사용
 %>
-<jsp:useBean id="formBean" class="pack.SangpumFormBean"/>
-<jsp:useBean id="dbConnPaging" class="pack.DbConnPaging"/>
+<jsp:useBean id="formBean" class="pack.controller.SangpumFormBean"/>
+<jsp:useBean id="dbConnPaging" class="pack.controller.DbConnPaging"/>
 <jsp:setProperty property="*" name="formBean"/>
 <%-- 자바에서도 입력자료 검사 권장 --%>
 <%

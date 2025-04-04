@@ -1,8 +1,8 @@
-<%@page import="pack.SangpumDto"%>
+<%@page import="pack.controller.SangpumDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="dbConn" class="pack.DbConnClass" scope="page"/>	<%--singleton 타입 객체 생성 --%>
+<jsp:useBean id="dbConn" class="pack.controller.DbConnClass" scope="page"/>	<%--singleton 타입 객체 생성 --%>
 
 <!DOCTYPE html>
 <html>

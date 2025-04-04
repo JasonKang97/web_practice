@@ -1,8 +1,8 @@
-<%@page import="pack.Jspex14JikwonDto"%>
+<%@page import="pack.controller.Jspex14JikwonDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="dbConn" class="pack.Jspex14DbConnClass"></jsp:useBean>
+<jsp:useBean id="dbConn" class="pack.controller.Jspex14DbConnClass"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
