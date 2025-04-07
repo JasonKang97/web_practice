@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties resource="pack/mvc/resourse/db.properties" />
+	
+	<typeAliases>	<!-- DataMapper에서 resultType에 사용되는 별명을 alias로 지정 -->
+		<typeAlias type="pack.mvc.model.UserDto" alias="dto"/>
+		<typeAlias type="pack.mvc.controller.UserForm" alias="form"/>
+	</typeAliases>
+	
+	
+	<environments default="dev">
+		<environment id="dev">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="pack/mvc/resourse/DataMapper.xml" />
+	</mappers>
+</configuration>
