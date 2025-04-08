@@ -1,4 +1,4 @@
-package pack.mvc.comtroller;
+package pack.mvc.controller;
 
 public class UserForm {
 	private String userid, password, name, email;

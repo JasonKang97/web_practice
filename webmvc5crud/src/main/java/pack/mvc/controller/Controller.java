@@ -1,4 +1,4 @@
-package pack.mvc.comtroller;
+package pack.mvc.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

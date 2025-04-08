@@ -1,6 +1,6 @@
-package pack.mvc.comtroller;
+package pack.mvc.controller;
 
-public class ModelAndView {	// 호줄 방식과 view 파일명을 기억
+public class ModelAndView {	// 호출 방식과 view 파일명을 기억
 	private boolean isRedirect = false;
 	private String viewName = "";
 	

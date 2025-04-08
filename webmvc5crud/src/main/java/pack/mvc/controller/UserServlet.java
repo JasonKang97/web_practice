@@ -1,5 +1,6 @@
-package pack.mvc.comtroller;
+package pack.mvc.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -30,7 +31,13 @@ public class UserServlet extends HttpServlet {
 			controller = getAction(command);
 			modelAndView = controller.execute(request, response);
 			
-			// 파일 호출 방식 선택 후 처리
+			// 파일 호출 방식 선택 후 view 파일을 클라이언트에게 전송
+			if(modelAndView.isRedirect()) {	// redirect
+				response.sendRedirect(modelAndView.getViewName());
+			}else {	// forwarding
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/" + modelAndView.getViewName());
+				dispatcher.forward(request, response);
+			}
 			
 		} catch (Exception e) {
 			System.out.println("service err: " + e);
@@ -41,9 +48,9 @@ public class UserServlet extends HttpServlet {
 		if(command.equals("list")) {
 			controller = new ListController();
 		}else if(command.equals("login")) {
-//			controller = new LoginController();
-//		}else if(command.equals("logout")) {
-//			controller = new LogoutController();
+			controller = new LoginController();
+		}else if(command.equals("logout")) {
+			controller = new LogoutController();
 //		}else if(command.equals("insert")) {
 //			controller = new InsertController();
 //		}else if(command.equals("view")) {
